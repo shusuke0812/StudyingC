@@ -10,7 +10,7 @@ int main(void) {
 	scanf("%d%d", &data, &qty);
 
 	// 税込金額を表示させる
-	printf("%d個あたり%d円です\n", 1, (int)(data*tax));
+	printf("1個あたり%d円です\n", (int)(data*tax));
 	printf("税率は\t %3.2fです\n", tax);
 	printf("%d個の購入で合計%d円です\n", qty, (int)(data*tax*qty));
 
