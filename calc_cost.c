@@ -1,3 +1,7 @@
+/*
+ * 金額と個数を入力して税込の合計額を算出する 
+ */
+
 #include <stdio.h>
 
 int main(void) {
