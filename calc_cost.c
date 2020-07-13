@@ -6,8 +6,7 @@
 
 int main(void) {
   
-	int data;
-	int qty;
+	int data, qty;
   double tax = 1.1;
 
 	// 金額と個数を入力
