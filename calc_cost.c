@@ -3,6 +3,7 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(void) {
   
@@ -24,6 +25,9 @@ int main(void) {
 	case 1:
 		tax = 1.08;
 		break;
+	default:
+		printf("持ち帰りの場合は1、そうでない場合は0を入力してください\n");
+		exit(0);
 	}
 
 	// 税込金額を表示させる
