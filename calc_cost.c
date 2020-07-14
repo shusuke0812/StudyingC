@@ -6,11 +6,22 @@
 
 int main(void) {
   
-	int data, qty;
-  double tax = 1.1;
+	int data, qty, tax_judge;
+  double tax;
 
 	// 金額と個数を入力
+	printf("金額、個数とスペース区切りで入力して下さい：例）100 2\n");
 	scanf("%d%d", &data, &qty);
+
+	// 持ち帰りか否かを入力する（軽減税率判定用）
+	printf("持ち帰りですか：Yes = 1, No = 0\n");
+	scanf("%d", &tax_judge);
+
+	if (tax_judge == 1) {
+		tax = 1.1;
+	} else {
+		tax = 1.08;
+	}
 
 	// 税込金額を表示させる
 	printf("1個あたり%d円です\n", (int)(data*tax));
