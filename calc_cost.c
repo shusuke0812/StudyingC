@@ -17,10 +17,13 @@ int main(void) {
 	printf("持ち帰りですか：Yes = 1, No = 0\n");
 	scanf("%d", &tax_judge);
 
-	if (tax_judge == 1) {
+	switch (tax_judge) {
+	case 0:
 		tax = 1.1;
-	} else {
+		break;
+	case 1:
 		tax = 1.08;
+		break;
 	}
 
 	// 税込金額を表示させる
