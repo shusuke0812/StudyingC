@@ -12,8 +12,10 @@ int main(void) {
   double tax;
 
 	// 金額と個数を入力
-	printf("金額、個数とスペース区切りで入力して下さい：例）100 2\n");
-	scanf("%d%d", &price, &qty);
+	do {
+		printf("金額、個数とスペース区切りで入力して下さい：例）100 2\n");
+		scanf("%d%d", &price, &qty);
+	} while(price<0 || qty<0);
 
 	// 持ち帰りか否かを入力する（軽減税率判定用）
 	printf("持ち帰りですか：Yes = 1, No = 0\n");
