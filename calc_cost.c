@@ -7,6 +7,7 @@
 
 int main(void) {
   
+	int i;
 	int price, qty, tax_judge, total_price, unit_price;
   double tax;
 
@@ -36,6 +37,12 @@ int main(void) {
 	printf("1個あたり%d円です\n", unit_price);
 	printf("税率は\t %3.2fです\n", tax);
 	printf("%d個の購入で合計%d円です\n", qty, total_price);
+
+	// 1~5割引きの金額を表示
+	printf("\n");
+	for (i=1; i<=5; i++) {
+		printf("%d割引：\t%d円\n", i, (int)(total_price - total_price * i / 10));
+	}
 
 	return 0;
 }
