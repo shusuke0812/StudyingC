@@ -7,7 +7,7 @@
 
 int main(void) {
   
-	int data, qty, tax_judge;
+	int data, qty, tax_judge, total_price, unit_price;
   double tax;
 
 	// 金額と個数を入力
@@ -31,9 +31,11 @@ int main(void) {
 	}
 
 	// 税込金額を表示させる
-	printf("1個あたり%d円です\n", (int)(data*tax));
+	unit_price = (int)(data*tax);
+	total_price = (int)(data*tax*qty);
+	printf("1個あたり%d円です\n", unit_price);
 	printf("税率は\t %3.2fです\n", tax);
-	printf("%d個の購入で合計%d円です\n", qty, (int)(data*tax*qty));
+	printf("%d個の購入で合計%d円です\n", qty, total_price);
 
 	return 0;
 }
