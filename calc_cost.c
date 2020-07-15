@@ -18,12 +18,14 @@ int main(void) {
 	} while(price<0 || qty<0);
 
 	// 持ち帰りか否かを入力する（軽減税率判定用）
-	printf("持ち帰りですか：Yes = 1, No = 0\n");
-	scanf("%d", &tax_judge);
+	do {
+		printf("持ち帰りですか：Yes = 1, No = 0\n");
+		scanf("%d", &tax_judge);
+	} while(tax_judge != 0 && tax_judge !=1);
 
 	switch (tax_judge) {
 	case 0:
-		tax = 1.1;
+		tax = 1.10;
 		break;
 	case 1:
 		tax = 1.08;
