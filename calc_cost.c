@@ -34,9 +34,10 @@ int main(void) {
 	// 税込金額を表示させる
 	unit_price = (int)(price*tax);
 	total_price = (int)(price*tax*qty);
-	printf("1個あたり%d円です\n", unit_price);
-	printf("税率は\t %3.2fです\n", tax);
-	printf("%d個の購入で合計%d円です\n", qty, total_price);
+	printf("\n");
+	printf("1個あたり：%d円\n", unit_price);
+	printf("税率：%3.2f\n", tax);
+	printf("%d個の購入で合計：%d円\n", qty, total_price);
 
 	// 1~5割引きの金額を表示
 	printf("\n");
