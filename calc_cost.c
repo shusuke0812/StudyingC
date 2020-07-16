@@ -5,9 +5,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int discount(int);
+
 int main(void) {
   
-	int i;
+	// int i;
 	int price, qty, tax_judge, total_price, unit_price;
   double tax;
 
@@ -45,9 +47,15 @@ int main(void) {
 
 	// 1~5割引きの金額を表示
 	printf("\n");
+	discount(total_price);
+
+	return 0;
+}
+
+int discount(int total_price) {
+	int i;
 	for (i=1; i<=5; i++) {
 		printf("%d割引：\t%d円\n", i, (int)(total_price - total_price * i / 10));
 	}
-
 	return 0;
 }
