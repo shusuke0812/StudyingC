@@ -4,6 +4,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int discount_price(int);
 int sum_price(int, double, int, int);
@@ -14,6 +15,17 @@ int main(void) {
 	int price, qty, tax_judge, total_price, unit_price;
   double tax;
 	char end_message[] = "END";
+	char fast_name[256], last_name[256];
+
+	// 名前を入力
+	printf("名字を入力して下さい（アルファベット）\n");
+	scanf("%s", fast_name);
+
+	printf("名前を入力して下さい（アルファベット）\n");
+	scanf("%s", last_name);
+
+	// 名前文字列の連結
+	strcat(fast_name, last_name);
 
 	// 金額と個数を入力
 	do {
@@ -39,7 +51,12 @@ int main(void) {
 		exit(0);
 	}
 
-	// 税込金額を表示させる
+	// 名前を表示
+	printf("\n");
+	printf("***********\n");
+	printf("%s\n", fast_name);
+
+	// 税込金額を表示
 	unit_price = (int)(price*tax);
 	total_price = (int)(price*tax*qty);
 	printf("\n");
@@ -50,6 +67,7 @@ int main(void) {
 	discount_price(total_price);
 
 	// 終了メッセージ
+	printf("***********\n");
 	printf("%s\n", end_message);
 
 	return 0;
