@@ -6,6 +6,7 @@
 #include <stdlib.h>
 
 int discount_price(int);
+int sum_price(int, double, int, int);
 
 int main(void) {
   
@@ -41,14 +42,19 @@ int main(void) {
 	unit_price = (int)(price*tax);
 	total_price = (int)(price*tax*qty);
 	printf("\n");
-	printf("1個あたり：%d円\n", unit_price);
-	printf("税率：%3.2f\n", tax);
-	printf("%d個の購入で合計：%d円\n", qty, total_price);
+	sum_price(qty, tax, unit_price, total_price);
 
 	// 1~5割引きの金額を表示
 	printf("\n");
 	discount_price(total_price);
 
+	return 0;
+}
+
+int sum_price(int qty, double tax, int unit_price, int total_price) {
+	printf("1個あたり：%d円\n", unit_price);
+	printf("税率：%3.2f\n", tax);
+	printf("%d個の購入で合計：%d円\n", qty, total_price);
 	return 0;
 }
 
