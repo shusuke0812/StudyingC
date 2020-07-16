@@ -13,6 +13,7 @@ int main(void) {
 	// int i;
 	int price, qty, tax_judge, total_price, unit_price;
   double tax;
+	char end_message[] = "END";
 
 	// 金額と個数を入力
 	do {
@@ -47,6 +48,9 @@ int main(void) {
 	// 1~5割引きの金額を表示
 	printf("\n");
 	discount_price(total_price);
+
+	// 終了メッセージ
+	printf("%s\n", end_message);
 
 	return 0;
 }
