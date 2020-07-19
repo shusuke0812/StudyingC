@@ -10,14 +10,14 @@ int discount_price(int);
 int sum_price(int, double, int, int);
 
 struct order_list {
-	char fast_name[256]; // 購入者（名前）
+	char first_name[256]; // 購入者（名前）
 	char last_name[256]; // 購入者（名字）
 	int price;           // 購入額
 	int qty;             // 購入数
 	int unit_price;      // 購入単価
 	int total_price;     // 購入額合計
 	double tax;          // 税率
-}
+};
 
 int main(void) {
   
@@ -33,7 +33,7 @@ int main(void) {
 	scanf("%s", data.last_name);
 
 	// 名前文字列の連結
-	strcat(data.fast_name, data.last_name);
+	strcat(data.first_name, data.last_name);
 
 	// 金額と個数を入力
 	do {
@@ -62,11 +62,11 @@ int main(void) {
 	// 名前を表示
 	printf("\n");
 	printf("***********\n");
-	printf("%s\n", data.fast_name);
+	printf("%s\n", data.first_name);
 
 	// 税込金額を表示
 	data.unit_price = (int)(data.price*data.tax);
-	struct.total_price = (int)(data.price*data.tax*qty);
+	data.total_price = (int)(data.price*data.tax*data.qty);
 	printf("\n");
 	sum_price(data.qty, data.tax, data.unit_price, data.total_price);
 
