@@ -9,13 +9,24 @@
 int discount_price(int);
 int sum_price(int, double, int, int);
 
+struct order_list {
+	char fast_name[256]; // 購入者（名前）
+	char last_name[256]; // 購入者（名字）
+	int price;           // 購入額
+	int qty;             // 購入数
+	int unit_price;      // 購入単価
+	int total_price;     // 購入額合計
+  double tax;          // 税率
+}
+
 int main(void) {
   
 	// int i;
-	int price, qty, tax_judge, total_price, unit_price;
-  double tax;
+	// int price, qty, tax_judge, total_price, unit_price;
+  // double tax;
 	char end_message[] = "END";
-	char fast_name[256], last_name[256];
+	// char fast_name[256], last_name[256];
+	struct order_list datta;
 
 	// 名前を入力
 	printf("名字を入力して下さい（アルファベット）\n");
