@@ -20,7 +20,9 @@ struct order_list {
 };
 
 int main(void) {
-  
+	
+	FILE *file;
+
 	int tax_judge;
 	char end_message[] = "END";
 	struct order_list data;
@@ -77,6 +79,13 @@ int main(void) {
 	// 終了メッセージ
 	printf("***********\n");
 	printf("%s\n", end_message);
+
+	// ファイルに書き込み
+	file = fopen("calc_cost_result.txt", "w");
+	fprintf(file, "***********\n");
+	fprintf(file, "%s\n", data.first_name);
+	fprintf(file, "%d個の購入で合計：%d円\n", data.qty, data.total_price);
+	fclose(file);
 
 	return 0;
 }
