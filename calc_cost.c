@@ -16,33 +16,30 @@ struct order_list {
 	int qty;             // 購入数
 	int unit_price;      // 購入単価
 	int total_price;     // 購入額合計
-  double tax;          // 税率
+	double tax;          // 税率
 }
 
 int main(void) {
   
-	// int i;
-	// int price, qty, tax_judge, total_price, unit_price;
-  // double tax;
+	int tax_judge;
 	char end_message[] = "END";
-	// char fast_name[256], last_name[256];
-	struct order_list datta;
+	struct order_list data;
 
 	// 名前を入力
 	printf("名字を入力して下さい（アルファベット）\n");
-	scanf("%s", fast_name);
+	scanf("%s", data.first_name);
 
 	printf("名前を入力して下さい（アルファベット）\n");
-	scanf("%s", last_name);
+	scanf("%s", data.last_name);
 
 	// 名前文字列の連結
-	strcat(fast_name, last_name);
+	strcat(data.fast_name, data.last_name);
 
 	// 金額と個数を入力
 	do {
 		printf("金額、個数とスペース区切りで入力して下さい：例）100 2\n");
-		scanf("%d%d", &price, &qty);
-	} while(price<0 || qty<0);
+		scanf("%d%d", &data.price, &data.qty);
+	} while(data.price<0 || data.qty<0);
 
 	// 持ち帰りか否かを入力する（軽減税率判定用）
 	do {
@@ -52,10 +49,10 @@ int main(void) {
 
 	switch (tax_judge) {
 	case 0:
-		tax = 1.10;
+		data.tax = 1.10;
 		break;
 	case 1:
-		tax = 1.08;
+		data.tax = 1.08;
 		break;
 	default:
 		printf("持ち帰りの場合は1、そうでない場合は0を入力してください\n");
@@ -65,17 +62,17 @@ int main(void) {
 	// 名前を表示
 	printf("\n");
 	printf("***********\n");
-	printf("%s\n", fast_name);
+	printf("%s\n", data.fast_name);
 
 	// 税込金額を表示
-	unit_price = (int)(price*tax);
-	total_price = (int)(price*tax*qty);
+	data.unit_price = (int)(data.price*data.tax);
+	struct.total_price = (int)(data.price*data.tax*qty);
 	printf("\n");
-	sum_price(qty, tax, unit_price, total_price);
+	sum_price(data.qty, data.tax, data.unit_price, data.total_price);
 
 	// 1~5割引きの金額を表示
 	printf("\n");
-	discount_price(total_price);
+	discount_price(data.total_price);
 
 	// 終了メッセージ
 	printf("***********\n");
