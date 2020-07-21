@@ -3,6 +3,7 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
 
 void func(int *pvalue);
 
@@ -10,6 +11,19 @@ int main(void) {
 	int *p, i;
 	int *q;
 	int value = 10;
+	int *heap;
+
+	// 配列メモリの動的確保
+	heap = (int *)malloc(sizeof(int) * 10);
+	if (heap == NULL) {
+		exit(0);
+	}
+	for (i=0; i<10; i++) {
+		heap[i] = i;
+	}
+	printf("mallocによる配列の動的確保\n");
+	printf("%d\n", heap[5]);
+	free(heap);
 
 	// iのアドレスをポインタ変数pに代入する
 	p = &i;
