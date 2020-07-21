@@ -3,4 +3,4 @@
  * 他のソースから呼び出すためのヘッダーファイル
  */
 
-int calc_triangle_area(int base, height);
+int calc_triangle_area(int base, int height);
