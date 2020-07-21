@@ -7,7 +7,15 @@
 
 int main(void) {
 	int result_value;
-	result_value = calc_triangle_area(10, 20);
+	int base, height;
+
+	// 底辺と高さの標準入力
+	do {
+		printf("底辺 高さを入力してください：（例）100 20\n");
+		scanf("%d%d", &base, &height);
+	} while(base<0 || height<0);
+
+	result_value = calc_triangle_area(base, height);
 	printf("%d\n", result_value);
 	
 	return 0;
