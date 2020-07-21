@@ -6,6 +6,9 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define TAX10 1.10
+#define TAX8 1.08
+
 int discount_price(int);
 int sum_price(int, double, int, int);
 
@@ -51,10 +54,10 @@ int main(void) {
 
 	switch (tax_judge) {
 	case 0:
-		data.tax = 1.10;
+		data.tax = TAX10;
 		break;
 	case 1:
-		data.tax = 1.08;
+		data.tax = TAX8;
 		break;
 	default:
 		printf("持ち帰りの場合は1、そうでない場合は0を入力してください\n");
