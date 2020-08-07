@@ -45,7 +45,12 @@ gcc main1.c main2.c
 ```bash
 ./a.out
 ```
- 
+
+- ただし、下記のように実行すればhelloという任意の実行ファイルができる
+```bash
+gcc -o hello hello.c
+```
+
 - Makeファイルの使い方は、
 ```bash
 $ vim Makefile
