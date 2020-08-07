@@ -25,10 +25,11 @@ int main(void) {
 	printf("%d\n", heap[5]);
 	free(heap);
 
-	// iのアドレスをポインタ変数pに代入する
+	// iのアドレスをポインタ変数pに代入する（pはiを指す）
 	p = &i;
 
 	printf("p=%p\n", p);
+	printf("i=%d\n", *p);
 	printf("p=%p\n", &i);
 	printf("p=%p\n", q);
 
